@@ -16,13 +16,15 @@
 	</div>
 </div>
 <div class="container-fluid" style="padding-top:95px">
+	<div class="jumbotron">
+		<form role="form" name="searchForm" novalidate>
 		<div class="form-group">
 	<div class="row">
 		<div class="col-sm-1">
-			<label for="skills" class="col-sm-1">Skill:</label>
+			<label for="skill" class="col-sm-1" style="color:black">Skill:</label>
 		</div>
 		<div class="col-sm-4 form-group">
-			<input type="text" class="form-control" placeholder="Search by skills" ng-model="search.skills" id="skills">
+			<input type="text" class="form-control" placeholder="Search by skill" ng-model="search.skills" id="skill" name="skill">
 			<span class="glyphicon glyphicon-search form-control-feedback" style="color: grey; margin-right:20px" offset=-35px></span>
 		</div>
 	</div>
@@ -30,14 +32,14 @@
 <div class="form-group">
 	<div class="row">
 		<div class="col-sm-1">
-			<label for="exp" class="col-sm-1">Experience:</label>
+			<label for="exp" class="col-sm-1" style="color:black">Experience:</label>
 		</div>
 	<div class="col-sm-2 form-group">
-		<input type="text" class="form-control" placeholder="From" ng-model="search.yearsOfExpLowerBound" id="exp">
+		<input type="text" class="form-control" placeholder="From" ng-model="search.yearsOfExpLowerBound" id="exp" name="exp">
 		<span class="glyphicon glyphicon-search form-control-feedback" style="color: grey; margin-right:20px" offset=-35px></span>
 	</div>
 	<div class="col-sm-2 form-group">
-		<input type="text" class="form-control" placeholder="To" ng-model="search.yearsOfExpUpperBound">
+		<input type="text" class="form-control" placeholder="To" ng-model="search.yearsOfExpUpperBound" id="exp2" name="exp2">
 		<span class="glyphicon glyphicon-search form-control-feedback" style="color: grey; margin-right:20px" offset=-35px></span>
 	</div>
 	</div>
@@ -45,18 +47,27 @@
 	<div class="form-group">
 	<div class="row">
 		<div class="col-sm-2 col-sm-offset-1 form-group">
-			<button type="submit" class="btn btn-info" ng-click="submitSearchParameters()">Search</button>
+			<button type="submit" class="btn btn-info" ng-click="submitSearchParameters()" ng-disabled="searchForm.skill.$untouched && searchForm.exp.$untouched && searchForm.exp2.$untouched">Search</button>
 		</div>
 	</div>
 </div>
+</form>
 </div>
-    <div fusioncharts
-       width="450"
-       style="min-height: 60vh"
-       type="column2d"
-       dataSource="{{myDataSource}}"
-			 ng-show="myDataSource.data.length">
-    </div>
+</div>
+<div class="row">
+	<div fusioncharts class="col-sm-6"
+		 style="min-height: 60vh; padding-left: 100px"
+		 type="column2d"
+		 dataSource="{{myDataSource}}"
+		 ng-show="myDataSource.data.length">
+	</div>
+	<div fusioncharts class="col-sm-6"
+		 style="min-height: 60vh"
+		 type="pie2d"
+		 dataSource="{{myPieDataSource}}"
+		 ng-show="myPieDataSource.data.length">
+	</div>
+</div>
 </div>
 	<footer class="navbar-fixed-bottom">
 		<p align="center">© 2016 - ResumeAnaylser</p>

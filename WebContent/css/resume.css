@@ -1,0 +1,5 @@
+.backgroundClass {
+  background : url("css/img.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
