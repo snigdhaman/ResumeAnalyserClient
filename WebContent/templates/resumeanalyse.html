@@ -1,0 +1,63 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" ui-sref="ResumeUpload">Resume Anaylser Engine</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+
+			<li><a class="active" href="#">Resume Analyser</li>
+		</ul>
+
+	</div>
+</div>
+<div class="container-fluid" style="padding-top:95px">
+		<div class="form-group">
+	<div class="row">
+		<div class="col-sm-1">
+			<label for="skills" class="col-sm-1">Skill:</label>
+		</div>
+		<div class="col-sm-4 form-group">
+			<input type="text" class="form-control" placeholder="Search by skills" ng-model="search.skills" id="skills">
+			<span class="glyphicon glyphicon-search form-control-feedback" style="color: grey; margin-right:20px" offset=-35px></span>
+		</div>
+	</div>
+</div>
+<div class="form-group">
+	<div class="row">
+		<div class="col-sm-1">
+			<label for="exp" class="col-sm-1">Experience:</label>
+		</div>
+	<div class="col-sm-2 form-group">
+		<input type="text" class="form-control" placeholder="From" ng-model="search.yearsOfExpLowerBound" id="exp">
+		<span class="glyphicon glyphicon-search form-control-feedback" style="color: grey; margin-right:20px" offset=-35px></span>
+	</div>
+	<div class="col-sm-2 form-group">
+		<input type="text" class="form-control" placeholder="To" ng-model="search.yearsOfExpUpperBound">
+		<span class="glyphicon glyphicon-search form-control-feedback" style="color: grey; margin-right:20px" offset=-35px></span>
+	</div>
+	</div>
+	</div>
+	<div class="form-group">
+	<div class="row">
+		<div class="col-sm-2 col-sm-offset-1 form-group">
+			<button type="submit" class="btn btn-info" ng-click="submitSearchParameters()">Search</button>
+		</div>
+	</div>
+</div>
+</div>
+    <div fusioncharts
+       width="450"
+       style="min-height: 60vh"
+       type="column2d"
+       dataSource="{{myDataSource}}"
+			 ng-show="myDataSource.data.length">
+    </div>
+</div>
+	<footer class="navbar-fixed-bottom">
+		<p align="center">© 2016 - ResumeAnaylser</p>
+	</footer>

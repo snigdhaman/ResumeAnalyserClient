@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="css/resume.css" rel="stylesheet">
+
+<!-- angular libraries js -->
+<script type="text/javascript" src="lib/fusionCharts/fusioncharts.js"></script>
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="lib/angular/angular-resource.js"></script>
+<script type="text/javascript" src="lib/angular/angular-ui-router.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Application Specific libraries -->
+<script type="text/javascript" src="js/app.module.js"></script>
+<script type="text/javascript" src="js/controllers/resumeuploader.ctrl.js"></script>
+<script type="text/javascript" src="js/controllers/resumeanalyser.ctrl.js"></script>
+
+
+<!-- Application Specific services and directives -->
+<script type="text/javascript" src="js/services/UploadService.js"></script>
+<script type="text/javascript" src="js/directives/FileModelDirective.js"></script>
+
+<script type="text/javascript" src="lib/fusionCharts/angular-fusioncharts.min.js"></script>
+
+</head>
+
+<body ng-app="ResumeAnalyserApp">
+	<div ui-view></div>
+</body>
+</html>

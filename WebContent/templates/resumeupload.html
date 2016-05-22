@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand active">Resume Anaylser Engine</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a ui-sref="ResumeAnaylse">Resume Analyser</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="container-fluid body-content">
+	<div class="jumbotron">
+
+		<input style="padding-bottom: 20px; padding-top: 20px" type="file" file-model="myFile"
+			multiple
+			onchange="angular.element(this).scope().getFileDetails(this)" />
+
+		<button style="margin-bottom: 20px" class="btn btn-primary"
+			ng-click="uploadFile()">Upload Resume</button>
+		<button style="margin-bottom: 20px; margin-left: 20px;"
+			class="btn btn-primary" ng-click="">Lets Start Analysis</button>
+
+		<p>
+			<progress id="probarentity" value="0"></progress>
+		</p>
+
+
+	</div>
+</div>
+<footer class="navbar-fixed-bottom">
+	<p align="center">© 2016 - ResumeAnaylser</p>
+</footer>
